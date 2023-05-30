@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ```
 
 ## RUN
-- The running commands for several datasets are shown below. You can also refer to ``run.sh``.
+- The running commands for several datasets are shown below. You can also refer to ``run_all.sh``.
 ```
 python main.py --data_dir ./CUB200 --log_dir ./logs/ -c configs/byol_cub200.yaml --ckpt_dir ./.cache/ --hide_progress
 python main.py --data_dir ./StanfordCars --log_dir ./logs/ -c configs/byol_stanfordcars.yaml --ckpt_dir ./.cache/ --hide_progress
