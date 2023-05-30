@@ -6,12 +6,6 @@ This project contains the implementation of learning common rationale to improve
 > Yangyang Shu, Anton van den Hengel and Lingqiao Liu*  
 > *To be appeared in CVPR 2023*
 
-# For byol
-Install the required packages:
-```
-pip install -r requirements.txt
-```
-
 ## Datasets
 | Dataset | Download Link |
 | -- | -- |
@@ -36,6 +30,13 @@ LCR
     ├── test/
     ├── image_list/
 ```
+
+# For byol
+Install the required packages:
+```
+pip install -r requirements.txt
+```
+
 
 # For moco v2
 
