@@ -1,0 +1,9 @@
+torch
+torchvision
+tqdm
+Pillow
+numpy
+matplotlib
+yaml==5.3.1
+tensorboardx==2.1
+
