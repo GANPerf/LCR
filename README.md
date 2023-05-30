@@ -4,7 +4,7 @@ This project contains the implementation of learning common rationale to improve
 
 > Learning Common Rationale to Improve Self-Supervised Representation for Fine-Grained Visual Recognition Problems,   
 > Yangyang Shu, Anton van den Hengel and Lingqiao Liu*  
-> *To be appeared in CVPR 2023*
+> *CVPR 2023*
 
 ## Datasets
 | Dataset | Download Link |
@@ -46,5 +46,17 @@ python main.py --data_dir ./Aircraft --log_dir ./logs/ -c configs/byol_aircrafts
 # For moco v2
 
 Code will come soon.
+
+Citation
+If you find this code or idea useful, please cite our work:
+```
+@inproceedings{shu2023learning,
+  title={Learning Common Rationale to Improve Self-Supervised Representation for Fine-Grained Visual Recognition Problems},
+  author={Shu, Yangyang and van den Hengel, Anton and Liu, Lingqiao},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={11392--11401},
+  year={2023}
+}
+```
 
 
