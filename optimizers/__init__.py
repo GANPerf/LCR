@@ -20,6 +20,8 @@ def get_optimizer(name, model, lr, momentum, weight_decay):
         optimizer = LARS(parameters, lr=lr, momentum=momentum, weight_decay=weight_decay)
     elif name == 'sgd':
         optimizer = torch.optim.SGD(parameters, lr=lr, momentum=momentum, weight_decay=weight_decay)
+    elif name == 'lars_simclr': # Careful
+        optimizer = LARS_simclr(model.named_modules(), lr=lr, momentum=momentum, weight_decay=weight_decay)
     elif name == 'larc':
         optimizer = LARC(
             torch.optim.SGD(
