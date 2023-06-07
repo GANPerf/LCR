@@ -1,24 +1,10 @@
-"""The lars optimizer used in simclr is a bit different from the paper where they exclude certain parameters"""
-"""I asked the author of byol, they also stick to the simclr lars implementation"""
-
 
 
 import torch 
 import torchvision
 from torch.optim.optimizer import Optimizer 
 import torch.nn as nn 
-# comments from the lead author of byol
-# 2. + 3. We follow the same implementation as the one used in SimCLR for LARS. This is indeed a bit 
-# different from the one described in the LARS paper and the implementation you attached to your email. 
-# In particular as in SimCLR we first modify the gradient to include the weight decay (with beta corresponding 
-# to self.weight_decay in the SimCLR code) and then adapt the learning rate by dividing by the norm of this 
-# sum, this is different from the LARS pseudo code where they divide by the sum of the norm (instead of the 
-# norm of the sum as SimCLR and us are doing). This is done in the SimCLR code by first adding the weight 
-# decay term to the gradient and then using this sum to perform the adaptation. We also use a term (usually 
-# referred to as trust_coefficient but referred as eeta in SimCLR code) set to 1e-3 to multiply the updates 
-# of linear layers.
-# Note that the logic "if w_norm > 0 and g_norm > 0 else 1.0" is there to tackle numerical instabilities.
-# In general we closely followed SimCLR implementation of LARS.
+
 class LARS_simclr(Optimizer):
     def __init__(self, 
                  named_modules, 
