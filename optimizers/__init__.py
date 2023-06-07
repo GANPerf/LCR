@@ -1,4 +1,5 @@
 from .lars import LARS
+from .lars_simclr import LARS_simclr
 from .larc import LARC
 import torch
 from .lr_scheduler import LR_Scheduler
@@ -36,6 +37,11 @@ def get_optimizer(name, model, lr, momentum, weight_decay):
     else:
         raise NotImplementedError
     return optimizer
+
+
+
+
+
 
 
 
