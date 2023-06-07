@@ -1,5 +1,3 @@
-
-
 import torch 
 import torchvision
 from torch.optim.optimizer import Optimizer 
