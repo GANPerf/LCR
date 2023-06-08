@@ -45,7 +45,19 @@ python main.py --data_dir ./Aircraft --log_dir ./logs/ -c configs/byol_aircrafts
 
 # For moco v2
 
-Code will come soon.
+- The running commands for pre-training and retrieval
+```
+python main_moco.py --epochs 100 -a resnet50 --lr 0.03 --batch-size 128 --multiprocessing-distributed --world-size 1 --rank 0 Aircraft --mlp --moco-t 0.2 --aug-plus --cos 
+python main_moco.py --epochs 100 -a resnet50 --lr 0.03 --batch-size 128 --multiprocessing-distributed --world-size 1 --rank 0 StanfordCars --mlp --moco-t 0.2 --aug-plus --cos 
+python main_moco.py --epochs 100 -a resnet50 --lr 0.03 --batch-size 128 --multiprocessing-distributed --world-size 1 --rank 0 CUB200 --mlp --moco-t 0.2 --aug-plus --cos 
+```
+
+- The running commands for linear probing
+```
+python main_lincls.py -a resnet50 --lr 30.0 --batch-size 256 --[your checkpoint path]/checkpoint_****.pth.tar --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0   Aircraft --class_num 100
+python main_lincls.py -a resnet50 --lr 30.0 --batch-size 256 --[your checkpoint path]/checkpoint_****.pth.tar --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0   StanfordCars --class_num 196
+python main_lincls.py -a resnet50 --lr 30.0 --batch-size 256 --[your checkpoint path]/checkpoint_****.pth.tar --dist-url 'tcp://localhost:10001' --multiprocessing-distributed --world-size 1 --rank 0   CUB200 --class_num 200
+```
 
 Citation
 If you find this code or idea useful, please cite our work:
